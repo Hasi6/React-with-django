@@ -1,0 +1,10 @@
+// ASYNC
+export const ASYNC_ACTION_START = "ASYNC_ACTION_START";
+export const ASYNC_ACTION_FINISHED = "ASYNC_ACTION_FINISHED";
+export const ASYNC_ACTION_ERROR = "ASYNC_ACTION_ERROR";
+
+// LEADS
+export const ADD_LEADS = 'ADD_LEADS';
+export const GET_LEADS = 'GET_LEADS';
+export const EDIT_LEADS = 'EDIT_LEADS';
+export const DELETE_LEADS = 'DELETE_LEADS';
