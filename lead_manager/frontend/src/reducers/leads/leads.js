@@ -1,30 +1,32 @@
 import { createReducer } from "../util/reducerUtil";
 import { ADD_LEADS, GET_LEADS, DELETE_LEADS, EDIT_LEADS } from "../../Types";
 
-const initialState = [];
+const initialState = {
+  leads: []
+};
 
 // ADD LEADS
 const addLeads = (state, payload) => {
-  return [...state, payload.lead];
+  return [...state.leads, payload.lead];
 };
 
 // GET LEAD
 const getLeads = (state, payload) => {
-  return payload.leads;
+  return { leads: payload.leads };
 };
 
 // DELETE LEADS
 const deleteLeads = (state, payload) => {
   const newLeads = state.filter(lead => lead._id !== payload.id);
 
-  return newLeads;
+  return { leads: newLeads };
 };
 
 // eDIT LEADS
 const editLeads = (state, payload) => {
-  const index = state.findIndex(lead => lead.id == payload.lead.id);
+  const index = state.leads.findIndex(lead => lead.id == payload.lead.id);
   if (index > -1) {
-    state[index] = payload.lead;
+    state.leads[index] = payload.lead;
   }
   return state;
 };
